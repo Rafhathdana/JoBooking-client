@@ -10,6 +10,9 @@
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
 }
+.headerContainer.listMode {
+  margin: 20px 0px 0px 0px;
+}
 .headerList {
   display: flex;
   gap: 40px;
@@ -70,10 +73,13 @@
 .date {
   position: absolute;
   top: 50px;
+  z-index: 2;
 }
 
 .options {
   position: absolute;
+  z-index: 2;
+
   top: 50px;
   background-color: white;
   color: gray;
