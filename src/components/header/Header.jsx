@@ -15,6 +15,7 @@ import { useContext, useState } from "react";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 const Header = ({ type }) => {
   const [openDate, setOpenDate] = useState(false);
   const [destination, setDestination] = useState("");
@@ -32,6 +33,7 @@ const Header = ({ type }) => {
     room: 1,
   });
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -40,9 +42,9 @@ const Header = ({ type }) => {
       };
     });
   };
-  const {dispatch}=useContext(SearchContext)
+  const { dispatch } = useContext(SearchContext);
   const handleSearch = () => {
-    dispatch({type:"NEW_SEARCH",payload:{destination,dates,options}})
+    dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });
   };
   return (
@@ -83,7 +85,11 @@ const Header = ({ type }) => {
               Get reward for your travels - unlock instant saving of 10% or more
               with a free JoBooking account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            {!user && (
+              <button className="headerBtn" onClick={navigate("/login")}>
+                Sign in / Register
+              </button>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

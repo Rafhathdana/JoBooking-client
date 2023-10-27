@@ -11,7 +11,7 @@ import useFetch from "../../hooks/useFetch";
 const List = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
-  const [dates, setDates] = useState(location.state.date);
+  const [dates, setDates] = useState(location.state.dates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
@@ -32,16 +32,18 @@ const List = () => {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>Destination</label>
-              <input placeholder={destination} type="text" />
+              <input
+                placeholder={destination}
+                onChange={(e) => setDestination(e.target.value)}
+                type="text"
+              />
             </div>
             <div className="lsItem">
-              <label>Check-in-Date</label>
-              <span onClick={() => setOpenDate(!openDate)}>
-                {`${format(dates[0].startDate, "MM/dd/yyyy")} to${format(
-                  dates[0].endDate,
-                  "MM/dd/yyyy"
-                )}`}
-              </span>
+              <label>Check-in Date</label>
+              <span onClick={() => setOpenDate(!openDate)}>{`${format(
+                dates[0].startDate,
+                "MM/dd/yyyy"
+              )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
               {openDate && (
                 <DateRange
                   onChange={(item) => setDates([item.selection])}
@@ -79,6 +81,7 @@ const List = () => {
                   <input
                     type="number"
                     min={1}
+                    onChange={(e) => setOptions.adult(e.target.value)}
                     className="lsOptionInput"
                     placeholder={options.adult}
                   />
@@ -88,6 +91,7 @@ const List = () => {
                   <input
                     type="number"
                     min={0}
+                    onChange={(e) => setOptions.children(e.target.value)}
                     className="lsOptionInput"
                     placeholder={options.children}
                   />
@@ -97,6 +101,7 @@ const List = () => {
                   <input
                     type="number"
                     min={1}
+                    onChange={(e) => setOptions.room(e.target.value)}
                     className="lsOptionInput"
                     placeholder={options.room}
                   />
