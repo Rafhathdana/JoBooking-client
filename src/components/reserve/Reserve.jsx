@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import "./reserve.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export const Reserve = ({ setOpen, hotelId }) => {
-  const [selectedRooms, setSelectedRooms] = useEffect([]);
+  const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
   const { dates } = useContext(SearchContext);
   const getDatesInRange = (startDate, endDate) => {
@@ -36,23 +36,22 @@ export const Reserve = ({ setOpen, hotelId }) => {
         ? [...selectedRooms, value]
         : selectedRooms.filter((item) => item !== value)
     );
-  }
-  ;
+  };
   const navigate = useNavigate();
-  const handleClick=async()=>{
-    try{
-        await Promise.all(
-            selectedRooms.map((roomId)=>{
-                const res=axios.put(`/rooms/availability/${roomId}`,{
-                    dates:alldates,
-                })
-                return res.data;
-            })
-        )
-        setOpen(false)
-        navigate("/")
-    }catch(err){}
-  }
+  const handleClick = async () => {
+    try {
+      await Promise.all(
+        selectedRooms.map((roomId) => {
+          const res = axios.put(`/rooms/availability/${roomId}`, {
+            dates: alldates,
+          });
+          return res.data;
+        })
+      );
+      setOpen(false);
+      navigate("/");
+    } catch (err) {}
+  };
   return (
     <div className="reserve">
       <div className="rContainer">
@@ -73,7 +72,7 @@ export const Reserve = ({ setOpen, hotelId }) => {
               <div className="rPrice">{item.price}</div>
             </div>
             <div className="rSelectRooms">
-              {item.roomNumbers.map((roomNumber) => (
+              {item?.roomNumbers?.map((roomNumber) => (
                 <div className="room">
                   <label>{roomNumber.number}</label>
                   <input

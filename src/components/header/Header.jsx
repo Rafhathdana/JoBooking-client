@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import {
   faBed,
+  faCalendarDays,
   faCar,
   faPerson,
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
-import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -155,7 +155,7 @@ const Header = ({ type }) => {
                       <span className="optionText">Children</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.children <= 1}
+                          disabled={options.children <= 0}
                           className="optionCounterButton"
                           onClick={() => handleOption("children", "d")}
                         >

@@ -1,16 +1,23 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./login.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
   });
-  const { loading, error, dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { user, loading, error, dispatch } = useContext(AuthContext);
+  useEffect(() => {
+    if (user) {
+      console.log(user);
+      navigate("/");
+    }
+  });
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -26,30 +33,33 @@ const Login = () => {
     }
   };
   return (
-    <div className="login">
-      <div className="lContainer">
-        <input
-          type="text"
-          name="username"
-          onChange={handleChange}
-          id="username"
-          placeholder="username"
-          className="lInput"
-        />
-        <input
-          type="password"
-          name="password"
-          onChange={handleChange}
-          id="password"
-          placeholder="password"
-          className="lInput"
-        />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
-        </button>
-        {error && <span>{error.message}</span>}
+    <>
+      <Navbar />
+      <div className="login">
+        <div className="lContainer">
+          <input
+            type="text"
+            name="username"
+            onChange={handleChange}
+            id="username"
+            placeholder="username"
+            className="lInput"
+          />
+          <input
+            type="password"
+            name="password"
+            onChange={handleChange}
+            id="password"
+            placeholder="password"
+            className="lInput"
+          />
+          <button disabled={loading} onClick={handleClick} className="lButton">
+            Login
+          </button>
+          {error && <span>{error.message}</span>}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
