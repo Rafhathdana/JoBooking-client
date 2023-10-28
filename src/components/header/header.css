@@ -55,7 +55,7 @@
   max-width: 1024px;
 }
 .headerIcon {
-  color: lightgrey;
+  color: lightgray;
 }
 .headerSearchItem {
   display: flex;
@@ -67,7 +67,7 @@
   outline: none;
 }
 .headerSearchText {
-  color: lightgrey;
+  color: lightgray;
   cursor: pointer;
 }
 .date {
@@ -79,7 +79,6 @@
 .options {
   position: absolute;
   z-index: 2;
-
   top: 50px;
   background-color: white;
   color: gray;
