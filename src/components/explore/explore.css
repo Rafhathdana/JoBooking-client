@@ -1,0 +1,48 @@
+.carousel-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.box {
+  width: 240px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.img-div {
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.img-text {
+  position: absolute;
+  padding: 11px;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  margin-bottom: 0;
+  background: linear-gradient(
+    0deg,
+    #000 0,
+    rgba(0, 0, 0, 0.8) 50%,
+    transparent
+  );
+  color: #ffffff;
+}
+
+.links a {
+  text-overflow: ellipsis;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 11px;
+  color: black;
+}

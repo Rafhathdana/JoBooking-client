@@ -16,7 +16,7 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
-const Header = ({ type }) => {
+const Header = ({ type, active = false }) => {
   const [openDate, setOpenDate] = useState(false);
   const [destination, setDestination] = useState("");
   const [dates, setDates] = useState([
@@ -55,13 +55,15 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <div className={`headerListItem ${active ? "" : "active"}`}>
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span onClick={() => navigate("/")}>Stays</span>
           </div>
-          <div className="headerListItem">
+          <div
+            className={`headerListItem ${active === "header" ? "active" : ""}`}
+          >
             <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
+            <span onClick={() => navigate("/flight")}>Flights</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />

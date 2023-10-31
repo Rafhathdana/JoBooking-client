@@ -1,41 +1,95 @@
-.fp {
-
-  display: flex;
-  justify-content: center;
-   align-items: center;
-  height: 290px;
-  width: 94%;
-  color: #fff;
-}
-.fpItem {
-  flex: 1;
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.fpImg {
+/* contain class styles */
+.contain {
   width: 100%;
-  height: 250px;
+  height: 400px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+/* H1 class styles */
+.contain h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+  margin-bottom: 32px;
+  color: #333333;
+  margin-left: 10%;
+}
+
+/* Div class styles */
+.dived {
+  width: 240px;
+  overflow: hidden;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dived img {
+  width: 100%;
+  height: 240px;
+  display: block;
+  margin-bottom: 8px;
   object-fit: cover;
 }
-.fpName {
-  color: #333;
-  font-weight: bold;
+
+.dived p {
+  margin: 0;
+  margin-right: 8px;
 }
-.fpCity {
-  font-weight: 300;
-}
-.fpPrice {
-  font-weight: 500;
-}
-.fpRating > button {
-  background-color: #800000;
-  color: white;
-  border: none;
-  padding: 3px;
-  margin-right: 10px;
-  font-weight: bold;
-}
-.fpRating > span {
+
+/* Title class styles */
+.title {
+  color: rgb(38, 38, 38);
   font-size: 14px;
+}
+
+/* Subtitle class styles */
+.subtitle {
+  color: #6b6b6b;
+  font-size: 14px;
+}
+
+/* Price class styles */
+.price {
+  margin-top: 8px !important;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 4px !important;
+}
+
+/* Rating class styles */
+.rating {
+  padding: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  background: #800000;
+  color: #fff;
+  border-radius: 5.09091px 5.09091px 5.09091px 0;
+}
+
+/* E class styles */
+.e {
+  font-size: 14px;
+  color: #262626;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Reviews class styles */
+.reviews {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-top: 2px;
+  line-height: 1;
+  color: #6b6b6b;
+}
+
+/* FlexDiv class styles */
+.flexDiv {
+  display: flex;
+  align-items: center;
 }
