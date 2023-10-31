@@ -1,33 +1,66 @@
 import useFetch from "../../hooks/useFetch";
 import "./propertyList.css";
+
+import Carousal from "@itseasy21/react-elastic-carousel";
+// import "./styles.css";
+
+import Hotels from "../../image/Hotels.png";
+import Appartment from "../../image/Appartment.png";
+import Resort from "../../image/Resort.png";
+import Villas from "../../image/Villas.png";
+import Cabins from "../../image/Cabins.png";
+import Cottages from "../../image/Cottages.png";
+// import Glamping from './image/Glamping.png';
+import Serviced_appartment from "../../image/Serviced_appartment.png";
+import Holidayhomes from "../../image/Holidayhomes.png";
+import Guesthomes from "../../image/Guesthomes.png";
+import hostels from "../../image/hostels.png";
 const PropertyList = () => {
   const { data, loading, error } = useFetch("/hotels/countByType");
 
-  const images = [
-    "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_resorts/6f87c6143fbd51a0bb5d15ca3b9cf84211ab0884.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg",
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 1, pagination: false },
+    { width: 768, itemsToShow: 3, itemsToScroll: 1, pagination: false },
+    { width: 800, itemsToShow: 4, itemsToScroll: 1, pagination: false },
   ];
+
+  const images = [
+    Hotels,
+    Appartment,
+    Resort,
+    Villas,
+    Cabins,
+    Cottages,
+    Serviced_appartment,
+    Holidayhomes,
+    Guesthomes,
+    hostels,
+  ];
+
   return (
     <div className="pList">
       {loading ? (
         "loading"
       ) : (
         <>
-          {data &&
-            images.map((img, i) => (
-              <div className="pListItem" key={i}>
-                <img src={img} alt="" className="pListImg" />
-                <div className="pListTitles">
-                  <h1>{data[i]?.type}</h1>
-                  <h2>
-                    {data[i]?.count} {data[i]?.type}
-                  </h2>
+          <Carousal breakPoints={breakPoints} pagination={false}>
+            {data &&
+              images.map((img, i) => (
+                <div className="fp" key={i}>
+                  <div className="divimg">
+                    <img className="browsimg" src={img} alt="Hotels" />
+                  </div>
+                  <div className="diver">
+                    <h4 className="subhead">{data[i]?.type}</h4>
+                    <p className="bbrowssub">
+                      {data[i]?.count}{"  "} {data[i]?.type}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </Carousal>
         </>
       )}
     </div>

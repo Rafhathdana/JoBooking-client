@@ -1,5 +1,5 @@
 .header {
-  background-color: #003580;
+  background-color: #800000;
   color: white;
   display: flex;
   justify-content: center;
@@ -32,7 +32,7 @@
   margin: 20px 0px;
 }
 .headerBtn {
-  background-color: #0071c2;
+  background-color: #c20000;
   color: white;
   border: none;
   font-weight: 500;
@@ -102,8 +102,8 @@
 .optionCounterButton {
   width: 30px;
   height: 30px;
-  border: 1px solid #0071c2;
-  color: #0071c2;
+  border: 1px solid #c20000;
+  color: #c20000;
   cursor: pointer;
   background-color: white;
 }

@@ -1,32 +1,97 @@
-.login {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.loginPage {
+  text-align: center;
+  padding-top: 10rem;
+}
+.picon {
+  width: 100px;
+  height: 40px;
+}
+.left > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.form > form {
+  width: 400px;
+  text-align: left;
+  padding: 20px;
+  margin: auto;
+}
+.input {
+  width: 100%;
+  margin-top: 2px;
+  height: 31px;
+  border: 0.5px solid black;
+  margin-bottom: 15px;
 }
 
-.lContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.input:focus {
+  box-shadow: 0 0 10px rgb(24, 150, 185);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgb(31, 139, 168);
 }
-
-.lInput {
-  height: 30px;
-  padding: 10px;
+.formheading {
+  color: rgb(56, 56, 56);
 }
-
 .lButton {
+  width: 100%;
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
+  background-color: #c20000;
   color: white;
   font-weight: bold;
+  margin-top: 10px;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .lButton:disabled {
-  background-color: #0071c28c;
+  background-color: #c200008c;
   cursor: not-allowed;
+}
+.authlogin {
+  width: 400px;
+  padding: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.googleimage {
+  border-radius: 50%;
+}
+.google {
+  cursor: pointer;
+  padding: 20px;
+  border: 1px solid rgb(185, 182, 182);
+  background-color: white;
+}
+.google > img {
+  width: 30px;
+}
+.line {
+  width: 400px;
+  margin: auto;
+  display: flex;
+}
+.hr {
+  margin-top: 29px;
+  width: 75px;
+  border: 0.1 px solid gray;
+  height: 0;
+  background-color: gray;
+}
+.p {
+  width: 200px;
+  font-size: 0.8rem;
+}
+.line1 {
+  width: 400px;
+  margin: auto;
+}
+.p1 {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
 }
