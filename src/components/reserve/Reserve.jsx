@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../context/SearchContext";
 import { useNavigate } from "react-router-dom";
-import API from "../../../api";
+import API from "../../api";
 
 export const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);

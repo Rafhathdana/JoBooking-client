@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import { userDetails } from "./formSource";
-import API from "../../../api";
+import API from "../../api";
 
 const Login = () => {
   const navigate = useNavigate();

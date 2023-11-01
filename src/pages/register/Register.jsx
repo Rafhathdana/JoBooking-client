@@ -7,7 +7,7 @@ import Navbar from "../../components/navbar/Navbar";
 import { userInputs } from "./formSource";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import API from "../../../api";
+import API from "../../api";
 
 const Register = () => {
   const navigate = useNavigate();

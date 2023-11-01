@@ -3,7 +3,7 @@ import "./navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Profile } from "./Profile";
-import API from "../../../api";
+import API from "../../api";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(AuthContext);
