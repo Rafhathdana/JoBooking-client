@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import "./login.css";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import { userDetails } from "./formSource";
+import API from "../../../api";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Login = () => {
     setIsLoading(true);
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", info);
+      const res = await API.post("/auth/login", info);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       navigate("/");
     } catch (err) {

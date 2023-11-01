@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import "./profile.css";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import API from "../../../api";
 
 export const Profile = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -13,7 +13,7 @@ export const Profile = () => {
   console.log(user);
   const handleLogout = async () => {
     try {
-      const res = await axios.delete("/auth/logout");
+      const res = await API.delete("/auth/logout");
       dispatch({ type: "LOGOUT" });
       alert("Successfully Logged Out");
 

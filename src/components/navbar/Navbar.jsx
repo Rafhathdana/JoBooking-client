@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
 import { Profile } from "./Profile";
+import API from "../../../api";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(AuthContext);
@@ -11,7 +11,7 @@ const Navbar = () => {
   console.log(user);
   const handleLogout = async () => {
     try {
-      const res = await axios.delete("/auth/logout");
+      const res = await API.delete("/auth/logout");
       dispatch({ type: "LOGOUT" });
       navigate("/");
     } catch (err) {
