@@ -6,7 +6,6 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Flights from "./pages/flight/Flight";
 import WebsiteInProgress from "./pages/WebsiteInProgress";
-// import CarRentals from "./pages/carRent/CarRent";
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
         <Route path="hotels" element={<List />} />
         <Route path="hotels/:id" element={<Hotel />} />
       </Route>
-      <Route path="*" element={<WebsiteInProgress />} />
+      <Route path="/*" element={<WebsiteInProgress />} />
     </Routes>
   );
 }
