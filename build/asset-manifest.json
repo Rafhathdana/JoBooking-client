@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9ea0600f.css",
+    "main.js": "/static/js/main.48c738a2.js",
+    "static/media/reading.png": "/static/media/reading.06713538c9d7c08b9f23.png",
+    "static/media/leeds.png": "/static/media/leeds.bfe478fa42a60075eabb.png",
+    "static/media/manchester.png": "/static/media/manchester.a21cc10307797eda5788.png",
+    "static/media/newcastle.png": "/static/media/newcastle.a83bdb186571a445caab.png",
+    "static/media/birmingam.png": "/static/media/birmingam.865e8be218030630433e.png",
+    "static/media/Cottages.png": "/static/media/Cottages.5188a1bd04f71d5f0cd2.png",
+    "static/media/Villas.png": "/static/media/Villas.afa9be32a3c612b47879.png",
+    "static/media/hostels.png": "/static/media/hostels.3064c86ce3390c06d0c9.png",
+    "static/media/Resort.png": "/static/media/Resort.b3c422b9089f1928b0fd.png",
+    "static/media/Serviced_appartment.png": "/static/media/Serviced_appartment.622b24d8a5d4770d7120.png",
+    "static/media/Appartment.png": "/static/media/Appartment.206481916a6539bbbbd7.png",
+    "static/media/Holidayhomes.png": "/static/media/Holidayhomes.9a925fa2d3bdb7cedad8.png",
+    "static/media/Hotels.png": "/static/media/Hotels.e23ee99dfff9e9781e9a.png",
+    "static/media/Cabins.png": "/static/media/Cabins.a49c12c4b42bee781c5f.png",
+    "static/media/Guesthomes.png": "/static/media/Guesthomes.83774257b65597c7653f.png",
+    "index.html": "/index.html",
+    "main.9ea0600f.css.map": "/static/css/main.9ea0600f.css.map",
+    "main.48c738a2.js.map": "/static/js/main.48c738a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ea0600f.css",
+    "static/js/main.48c738a2.js"
+  ]
+}
